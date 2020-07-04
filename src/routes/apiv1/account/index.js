@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 
 const saltcount = 10;
 
-mongoose.connect('mongodb+srv://nova:st18chenh@cluster0-ztrfz.azure.mongodb.net/ngpdata3_dev?retryWrites=true&w=majority', {useNewUrlParser:true, useUnifiedTopology:true})
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017', {useNewUrlParser:true, useUnifiedTopology:true})
 	.then( () => console.log('db conenction established'));
 
 const AccountSchema = mongoose.Schema({
